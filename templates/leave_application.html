@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron text-center">
+  <h2>Leave Aplication</h2>
+</div>
+<div class="container" style="width:600px;">
+
+  <form method="POST" action="{{ url_for('leave') }}">
+    <div class="form-group">
+      <label for="faculty_id">Faculty ID</label>
+      <input type="text" readonly class="form-control" id="faculty_id" name="faculty_id" value="{{faculty_id}}">
+    </div>
+    <div class="form-group">
+      <label for="duration">Days</label>
+      <input type="text" class="form-control" id="duration" name="duration" placeholder="Enter number of days">
+    </div>
+
+    <div class="form-group">
+      <label for="start_date">Start Date</label>
+      <input type="text" class="form-control" id="start_date" name="start_date" placeholder="Enter start date">
+    </div>
+    <div class="form-group">
+      <label for="comment">Commment</label>
+      <input type="text" class="form-control" id="comment" name="comment" placeholder="Add Comment">
+    </div>
+    <br />
+    <center> <button type="submit" class="btn btn-primary">Apply</button></center>
+  </form>
+</div>
+{% endblock %}

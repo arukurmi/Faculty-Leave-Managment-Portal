@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="container">
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Faculty ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Department</th>
+      <th scope="col">Total Leaves</th>
+      <th scope="col">Available Leaves</th>
+      <th scope="col">Leave Requested</th>
+      <th scope="col">Apply For Leave</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in table %}
+    <tr>
+      <td>{{data[0]}}</td>
+      <td>{{data[2]}}</td>
+      <td>{{data[3]}}</td>
+      <td>{{data[4]}}</td>
+      <td>{{data[5]}}</td>
+      <td>{{data[6]}}</td>
+      <td>{{data[7]}}</td>
+      <td><a href="{{ url_for('leaveapply', faculty_id = data[0]) }}"> Apply</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+  </div>
+{% endblock %}
+

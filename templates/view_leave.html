@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Leave Aplication</h1>
+  </div>
+  <div class="container" style="width:600px;">
+
+    <form method="POST" action="{{ url_for('leaveaction') }}">
+    <div class="form-group">
+      <label for="faculty_id">Request ID</label>
+      <input type="text" readonly class="form-control" id="request_id" name="request_id" value="{{leave_data[0][0]}}">
+    </div>
+    <div class="form-group">
+      <label for="faculty_id">Faculty ID</label>
+      <input type="text" readonly class="form-control" id="faculty_id" name="faculty_id" value="{{leave_data[0][1]}}">
+    </div>
+    <div class="form-group">
+      <label for="duration">Days</label>
+      <input type="text" readonly class="form-control" id="duration" name="duration" value="{{leave_data[0][2]}}">
+    </div>
+    <div class="form-group">
+      <label for="start_date">Start Date</label>
+      <input type="text" readonly class="form-control" id="start_date" name="start_date" value="{{leave_data[0][3]}}">
+    </div>
+    <div class="form-group">
+      <label for="comment">Faculty Commment</label>
+      <input type="text" readonly class="form-control" id="comment" name="comment" value="{{leave_data[0][5]}}">
+    </div>
+    <div class="form-group">
+      <label for="comments">Authority Comments</label>
+      <input type="text" readonly class="form-control" id="comments" name="comments" value="{{leave_data[0][6]}}">
+    </div>
+  <div class="form-group">
+    <label for="action">Action</label>
+    <select class="form-control" id="action" name="action">
+      <option value="approved" selected>Approved</option>
+      <option value="resubmit">Submit Again</option>
+      <option value="rejected">Rejected</option>
+    </select>
+  </div>    
+    <div class="form-group">
+      <label for="comment">Add Commment</label>
+      <input type="text" class="form-control" id="admin_comment" name="admin_comment" placeholder="Add Comment">
+    </div>
+    <br /> <center> <button type="submit" class="btn btn-primary">Submit</button></center>
+  </form>
+  </div>
+{% endblock %}

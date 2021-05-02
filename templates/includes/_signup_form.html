@@ -1,0 +1,18 @@
+<form class="form-signin" method="POST" action="{{ url_for('register') }}">
+  <div class="text-center mb-4">
+    <p>Please enter your credentials</p>
+  </div>
+
+  <div class="form-label-group mb-3">
+    <label for="inputEmail">Username</label>
+    <input id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+  </div>
+
+  <div class="form-label-group" mt-3>
+    <br>
+    <label for="inputPassword">Password</label>
+    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+  </div>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+</form>

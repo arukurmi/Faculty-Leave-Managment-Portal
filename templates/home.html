@@ -1,0 +1,15 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="jumbotron text-center">
+  <h2>Sign In</h2>
+</div>
+
+<div class="container" style="width:400px;">
+  {% include 'includes/_signin_form.html' %}
+  <div><center><br>Don't have an account? <a href="{{ url_for('register') }}">Sign up!</a></center></div>
+</div>
+
+{% endblock %}

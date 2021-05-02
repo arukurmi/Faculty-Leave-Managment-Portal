@@ -1,0 +1,9 @@
+
+<div class="list-group">
+  {% for profile in profiles %}
+    <a href="{{url_for('profile',name=profile['username'])}}" class="list-group-item list-group-item-action">
+      <h4><b>{{profile['name']}}</b></h4>
+      <p><font size="2">{{profile['designation']}}, {{profile['department']}}</font></p>
+    </a>
+  {% endfor %}
+</div>

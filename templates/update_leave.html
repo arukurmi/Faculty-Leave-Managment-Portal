@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Leave Aplication</h1>
+  </div>
+  <div class="container" style="width:600px;">
+
+    <form method="POST" action="{{ url_for('updateleave') }}">
+    <div class="form-group">
+      <label for="request_id">Request ID</label>
+      <input type="text" readonly class="form-control" id="request_id" name="request_id" value="{{leave_data[0][0]}}">
+    </div>
+    <div class="form-group">
+      <label for="faculty_id">Faculty ID</label>
+      <input type="text" readonly class="form-control" id="faculty_id" name="faculty_id" value="{{leave_data[0][1]}}">
+    </div>
+    <div class="form-group">
+      <label for="status">Application Status</label>
+      <input type="text" readonly class="form-control" id="status" name="status" value="{{leave_data[0][4]}}">
+    </div>
+    <div class="form-group">
+      <label for="admin_comment">Comment by Administrative Authority</label>
+      <input type="text" readonly class="form-control" id="admin_comment" name="admin_comment" value="{{leave_data[0][6]}}">
+    </div>
+    <div class="form-group">
+      <label for="duration">Days</label>
+      <input type="text" class="form-control" id="duration" name="duration" value="{{leave_data[0][2]}}">
+    </div>
+    <div class="form-group">
+      <label for="start_date">Start Date</label>
+      <input type="text" class="form-control" id="start_date" name="start_date" value="{{leave_data[0][3]}}">
+    </div>
+    <div class="form-group">
+      <label for="comment">Commment</label>
+      <input type="text" class="form-control" id="comment" name="comment" value="{{leave_data[0][5]}}">
+    </div>
+    <br /> <center> <button type="submit" class="btn btn-primary">Submit</button></center>
+  </form>
+  </div>
+{% endblock %}

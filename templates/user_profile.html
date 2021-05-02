@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="jumbotron text-center">
+  <h2>Profile</h2>
+</div>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"><strong>Faculty ID</strong> : {{user_data[0][0]}}</li>
+  <li class="list-group-item"><strong>Total Leaves</strong> : {{user_data[0][5]}}</li>
+  <li class="list-group-item"><strong>Available Leaves</strong> : {{user_data[0][6]}}</li>
+  <li class="list-group-item"><strong>Leave requested</strong> : {% if user_data[0][7] %}Yes {%else%}No{%endif%}</li>
+</ul></br>
+<center>
+  <div style="width:200px;">
+    <a href="{{url_for('leaveapply',faculty_id = user_data[0][0])}}"><button
+        class="btn btn-lg btn-primary btn-block">Apply For Leave</button></a>
+  </div>
+</center> 
+</br>
+
+<h3>Leave Application Requested</h3>
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Request ID</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">Status</th>
+        <th scope="col">Faculty Comment</th>
+        <th scope="col">Authority Comment</th>
+        <th scope="col">Approval Awaited</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for leave in leave_data%}
+      <tr>
+        <td>{{leave[0]}}</td>
+        <td>{{leave[2]}}</td>
+        <td>{{leave[3]}}</td>
+        <td>{% if leave[4] == 'resubmit'%}<a href="{{ url_for('modifyleave',request_id = leave[0])}}">Re-Submit </a>{%
+          else %} {{leave[4]}} {% endif %}</td>
+        <td>{{leave[5]}}</td>
+        <td>{{leave[6]}}</td>
+        <td>{{leave[7]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
