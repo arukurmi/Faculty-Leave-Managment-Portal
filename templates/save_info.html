@@ -15,10 +15,16 @@
     <input type="email" class="form-control" id="email" name="email" placeholder="Email">
   </div>
   <div class="form-group">
+    <label for="background">background</label>
+    <input type="background" class="form-control" id="background" name="background" placeholder="background">
+  </div>
+ 
+  <div class="form-group">
     <label for="designation">Designation</label>
     <select class="form-control" id="designation" name="designation">
       <option value="Director">Director</option>
       <option value="DFA">Dean Faculty Affairs</option>
+      <option value="ADFA">Associate Dean Faculty Affairs</option>
       <option value="HoD">Head of Department</option>
       <option value="Faculty" selected>Faculty</option>
     </select>
@@ -33,6 +39,24 @@
       <option value="CHE">Chemical Engineering</option>
     </select>
   </div>
+  <div class="form-group">
+    <label for="course">course</label>
+    <div id="course_areas" name="course_areas">
+       <button id="add_r_button" class="btn add-more" type="button" onclick="addcourse()">+ add course</button>
+       </div>
+  </div>
+  <div class="form-group">
+    <label for="research">Research area</label>
+    <div id="res_areas" name="res_areas">
+       <button id="add_r_button" class="btn add-more" type="button" onclick="addResearch()">+ add research</button>
+       </div>
+  </div>
+  <!-- <div>
+    <label for="publications">Publications</label>
+    <div id ="publications">
+      <button id="add_r_button" class="btn add-more" type="button" onclick="addPublication()">+ add publication</button>
+    </div>
+  </div> -->
   <br /> <center> <button type="submit" class="btn btn-primary">Update</button></center>
 </form>
   </div>

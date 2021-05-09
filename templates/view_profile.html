@@ -4,13 +4,32 @@
 <div class="jumbotron text-center">
   <h2>Faculty Profile</h2>
 </div>
-
 <ul class="list-group list-group-flush">
   {% for key,values in user_data.items() %}
-    {% if key != '_id' and key != 'username' %}
-      <li class="list-group-item"><strong>{{key}} : </strong> {{values}}</li>
-    {% endif %}
+  {% if key != '_id' and key != 'username' and key != 'research' and key != 'course' and key != 'title' and key !=
+  'description'%}
+  <li class="list-group-item"><strong>{{key}} : </strong> {{values}}</li>
+  {% endif %}
   {% endfor %}
-  </ul>
+  <li class="list-group-item"><strong>Courses</strong> : <br>
+    {% for item in user_data['course'] %}
+    {{item}} <br>
+    {% endfor %}
+  </li>
+  <li class="list-group-item"><strong>Research Interests</strong> : <br>
+    {% for item in user_data['research'] %}
+    {{item}} <br>
+    {% endfor %}
+  </li>
 
-{% endblock %}
+  <!-- </ul>
+   <strong>Publications</strong> <br><br>
+   {% for i in range(user_data['title']|length) %}
+    <div>
+    <strong>Publication {{i+1}}</strong> <br>
+    <em>Title</em> : {{user_data['title'][i]}}<br>
+    <em>Description</em> : {{user_data['description'][i]}}<br><br>
+    </div> -->
+  {% endfor%}
+
+  {% endblock %}

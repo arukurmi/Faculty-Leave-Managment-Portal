@@ -1,9 +1,15 @@
-
 <div class="list-group">
   {% for profile in profiles %}
     <a href="{{url_for('profile',name=profile['username'])}}" class="list-group-item list-group-item-action">
-      <h4><b>{{profile['name']}}</b></h4>
-      <p><font size="2">{{profile['designation']}}, {{profile['department']}}</font></p>
-    </a>
+      <h3>{{profile['name']}}</h3>
+      <p>{{profile['designation']}}, {{profile['department']}}</p>
+      <p><em>{{profile['email']}}</em></p>
+      <p>
+      <strong>Research Intersts : </strong>
+      {% for item in profile['research']%}
+        {{item}}
+      {% endfor %}
+      </p>
+    </a>  
   {% endfor %}
 </div>
