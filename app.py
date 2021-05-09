@@ -3,7 +3,7 @@
 from datetime import datetime,date
 # from flaskext.mysql import MySQL
 # import bcrypt
-
+#added a comment
 
 # app = Flask(__name__)
 
