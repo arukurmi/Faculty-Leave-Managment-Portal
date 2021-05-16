@@ -5,4 +5,9 @@ This is a flask based web application to manage Faculty affairs mainly leave app
 **Tools/frameworks used** : Flask, MongoDB, PostgreSQL, JavaScript, HTML, CSS
 
 #### How to run
-> $python3 app.py
+
+CLone or download the zip file.
+Setup the flask environment in your folder.
+Open up the cod in vs code and run the app.py file. To do so, in the terminal (ctrl+shift+`), navigate to the folder and run the app.py using the following command.
+
+> $python app.py
