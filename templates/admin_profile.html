@@ -4,26 +4,26 @@
   <div class="jumbotron text-center"> <h2>Profile</h2> </div>
 
   <ul class="list-group list-group-flush">
-  <li class="list-group-item"><strong>Faculty ID</strong> : {{user_data[0][0]}}</li>
+  <li class="list-group-item"><strong>Faculty ID:</strong> {{user_data[0][0]}}</li>
   {% for key,values in profile_data.items() %}
   {% if key != '_id' and key != 'username' and key != 'research' and key != 'course' and key != 'title' and key != 'description'%}
     <li class="list-group-item"><strong>{{key}} : </strong> {{values}}</li>
   {% endif %}
 {% endfor %}
 
-<li class="list-group-item"><strong>course</strong> :
+<li class="list-group-item"><strong>course:</strong>
 {% for item in profile_data['course'] %}
    {{item}},
 {% endfor %}
 </li>
-<li class="list-group-item"><strong>Research Interests</strong> :
+<li class="list-group-item"><strong>Research Interests:</strong> 
   {% for item in profile_data['research'] %}
      {{item}},
   {% endfor %}
   </li>
-  <li class="list-group-item"><strong>Total Leaves</strong> : {{user_data[0][5]}}</li>
-  <li class="list-group-item"><strong>Available Leaves</strong> : {{user_data[0][6]}}</li>
-  <li class="list-group-item"><strong>Leave requested</strong> : {% if user_data[0][7] %}Yes {%else%}No{%endif%}</li>
+  <li class="list-group-item"><strong>Total Leaves:</strong> {{user_data[0][5]}}</li>
+  <li class="list-group-item"><strong>Available Leaves:</strong> {{user_data[0][6]}}</li>
+  <li class="list-group-item"><strong>Leave requested:</strong> {% if user_data[0][7] %}Yes {%else%}No{%endif%}</li>
   </ul></br>
   <center><div style="width:200px;">
     <a href="{{url_for('leaveapply',faculty_id = user_data[0][0])}}"><button class="btn btn-lg btn-primary btn-block">Apply For Leave</button></a>
