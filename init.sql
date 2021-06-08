@@ -59,17 +59,17 @@ INSERT INTO LeaveRoute VALUES(4,'Director','Director','r');
 
 
 DELIMITER $$
--- CREATE Trigger updateLog
--- AFTER INSERT ON Leaves
--- FOR EACH ROW
--- BEGIN
---   DECLARE timestamp TIMESTAMP;
---   DECLARE name_ VARCHAR(30);
---   DECLARE designation_ VARCHAR(10); 
+CREATE Trigger updateLog
+AFTER INSERT ON Leaves
+FOR EACH ROW
+BEGIN
+  DECLARE timestamp TIMESTAMP;
+  DECLARE name_ VARCHAR(30);
+  DECLARE designation_ VARCHAR(10); 
 
---   SELECT CURRENT_TIMESTAMP into timestamp;
---   SELECT name, designation INTO name_, designation_ FROM Faculty WHERE faculty_id = NEW.faculty_id;
+  SELECT CURRENT_TIMESTAMP into timestamp;
+  SELECT name, designation INTO name_, designation_ FROM Faculty WHERE faculty_id = NEW.faculty_id;
 
---   INSERT INTO Log(timestamp, request_id, record, designation, name) VALUES(timestamp, NEW.request_id,"new leave request",designation_,name_);
+  INSERT INTO Log(timestamp, request_id, record, designation, name) VALUES(timestamp, NEW.request_id,"new leave request",designation_,name_);
   
 END; $$
