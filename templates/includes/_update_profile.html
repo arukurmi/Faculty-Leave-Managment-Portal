@@ -9,7 +9,8 @@
   </div>
   <div class="form-group">
     <label for="background">background</label>
-    <input type="background" class="form-control" id="background" name="background" placeholder="background" value="{{user_data['background']}}">
+    <input type="background" class="form-control" id="background" name="background" placeholder="background"
+      value="{{user_data['background']}}">
   </div>
   <div class="form-group">
     <label for="designation">Designation</label>
@@ -21,7 +22,7 @@
       <option value="Faculty" selected>Faculty</option>
     </select>
   </div>
-   <div class="form-group">
+  <div class="form-group">
     <label for="department">Department</label>
     <select class="form-control" readonly id="department" name="department" value="{{user_data['department']}}">
       <option value="CSE">Computer Science and Engineering</option>
@@ -34,34 +35,36 @@
   <div class="form-group">
     <label for="research">Research area</label>
     <div id="res_areas" name="res_areas">
-       <button id="add_r_button" class="btn add-more" type="button" onclick="addResearch()">+ add research</button>
-       {% for i in range(user_data['research']|length) %}
-         {% set var = "research"+(i+10)|string%}
-         <input typr="text" class="form-control" id={{var}} name = {{var}} value="{{user_data['research'][i]}}">
+      <button id="add_r_button" class="btn add-more" type="button" onclick="addResearch()">+ add research</button>
+      {% for i in range(user_data['research']|length) %}
+      {% set var = "research"+(i+10)|string%}
+      <input typr="text" class="form-control" id={{var}} name={{var}} value="{{user_data['research'][i]}}">
       {% endfor %}
-      
-  </div>
-  <div class="form-group">
-    <label for="course">course</label>
-    <div id="course_areas" name="course_areas">
-       <button id="add_r_button" class="btn add-more" type="button" onclick="addcourse()">+ add course</button>
-       {% for i in range(user_data['course']|length) %}
-         {% set var = "course"+(i+10)|string%}
-         <input typr="text" class="form-control" id={{var}} name = {{var}} value="{{user_data['course'][i]}}">
-      {% endfor %}
-      
-  </div>
-  <div>
-    <label for="publications">Publications</label>
-    <div id ="publications">
-      <button id="add_r_button" class="btn add-more" type="button" onclick="addPublication()">+ add publication</button>
-      {% for i in range(user_data['title']|length) %}
-         {% set var = "title"+(i+10)|string%}
-         {% set var2 = "description"+(i+10)|string%}
-         <input typr="text" class="form-control" id={{var}} name = {{var}} value="{{user_data['title'][i]}}">
-         <input typr="text" class="form-control" id={{var2}} name = {{var2}} value="{{user_data['description'][i]}}"><br>
-      {% endfor %}
+
     </div>
-  </div>
-  <br /> <center> <button type="submit" class="btn btn-primary">Update</button></center>
+    <div class="form-group">
+      <label for="course">course</label>
+      <div id="course_areas" name="course_areas">
+        <button id="add_r_button" class="btn add-more" type="button" onclick="addcourse()">+ add course</button>
+        {% for i in range(user_data['course']|length) %}
+        {% set var = "course"+(i+10)|string%}
+        <input typr="text" class="form-control" id={{var}} name={{var}} value="{{user_data['course'][i]}}">
+        {% endfor %}
+
+      </div>
+      <div>
+        <label for="publications">Publications</label>
+        <div id="publications">
+          <button id="add_r_button" class="btn add-more" type="button" onclick="addPublication()">+ add
+            publication</button>
+          {% for i in range(user_data['title']|length) %}
+          {% set var = "title"+(i+10)|string%}
+          {% set var2 = "description"+(i+10)|string%}
+          <input typr="text" class="form-control" id={{var}} name={{var}} value="{{user_data['title'][i]}}">
+          <input typr="text" class="form-control" id={{var2}} name={{var2}} value="{{user_data['description'][i]}}"><br>
+          {% endfor %}
+        </div>
+      </div>
+      <br />
+      <center> <button type="submit" class="btn btn-primary">Update</button></center>
 </form>
